@@ -1,8 +1,4 @@
 import {
-  Button,
-  ButtonGroup,
-  Text,
-  HStack,
   Grid,
   GridItem,
   Show,
@@ -14,6 +10,8 @@ import {
   Box,
 } from "@chakra-ui/react";
 
+import Navbar from "./components/Navbar";
+
 const App = () => (
   <>
     <Grid
@@ -21,16 +19,13 @@ const App = () => (
         base: `"nav" "main"`,
         lg: `"nav nav" "aside main"`,
       }}
-      gridTemplateRows={"50px 1fr"}
-      gridTemplateColumns={"25% 1fr"}
-      h="100vh"
       w="100%"
       gap="0"
       color="blackAlpha.700"
       fontWeight="bold"
     >
-      <GridItem pl="2" bg="orange.300" area={"nav"}>
-        <Text>Nav</Text>
+      <GridItem pl="2" area={"nav"}>
+        <Navbar />
       </GridItem>
       <Show above="lg">
         <GridItem pl="2" bg="pink.300" area={"aside"}>
@@ -76,7 +71,7 @@ const App = () => (
         </Accordion>
       </GridItem>
     </Grid>
-    // <Grid templateAreas={`"nav nav" "aside main"`}></Grid>
+    {/* <Grid templateAreas={`"nav nav" "aside main"`}></Grid> */}
   </>
 );
 
