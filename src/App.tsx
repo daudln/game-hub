@@ -8,6 +8,7 @@ import {
   AccordionPanel,
   AccordionIcon,
   Box,
+  Input,
 } from '@chakra-ui/react';
 
 import Navbar from './components/Navbar';
@@ -25,15 +26,13 @@ const App = () => (
           // base: `100%`,
         }
       }
-      w="100%"
-      gap="0"
     >
       <GridItem pl="2" area={'nav'}>
         <Navbar />
       </GridItem>
       <Show above="lg">
         <GridItem pl="2" area={'aside'}>
-          Aside
+          <Input placeholder="Basic usage" m="2" w={'50%'} />
         </GridItem>
       </Show>
 
@@ -41,7 +40,6 @@ const App = () => (
         <GameGrid />
       </GridItem>
     </Grid>
-    {/* <Grid templateAreas={`"nav nav" "aside main"`}></Grid> */}
   </>
 );
 
