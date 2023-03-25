@@ -1,10 +1,83 @@
-import { Button, ButtonGroup, Text, HStack } from "@chakra-ui/react";
+import {
+  Button,
+  ButtonGroup,
+  Text,
+  HStack,
+  Grid,
+  GridItem,
+  Show,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+} from "@chakra-ui/react";
 
 const App = () => (
-  <HStack>
-    <Button colorScheme="blue">Button</Button>
-    <Text>Hello world</Text>
-  </HStack>
+  <>
+    <Grid
+      templateAreas={{
+        base: `"nav" "main"`,
+        lg: `"nav nav" "aside main"`,
+      }}
+      gridTemplateRows={"50px 1fr"}
+      gridTemplateColumns={"25% 1fr"}
+      h="100vh"
+      w="100%"
+      gap="0"
+      color="blackAlpha.700"
+      fontWeight="bold"
+    >
+      <GridItem pl="2" bg="orange.300" area={"nav"}>
+        <Text>Nav</Text>
+      </GridItem>
+      <Show above="lg">
+        <GridItem pl="2" bg="pink.300" area={"aside"}>
+          Aside
+        </GridItem>
+      </Show>
+
+      <GridItem pl="2" bg="green.300" area={"main"}>
+        <Accordion>
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box as="span" flex="1" textAlign="left">
+                  Section 1 title
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </AccordionPanel>
+          </AccordionItem>
+
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box as="span" flex="1" textAlign="left">
+                  Section 2 title
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </AccordionPanel>
+          </AccordionItem>
+        </Accordion>
+      </GridItem>
+    </Grid>
+    // <Grid templateAreas={`"nav nav" "aside main"`}></Grid>
+  </>
 );
 
 export default App;
