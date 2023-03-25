@@ -21,18 +21,17 @@ const App = () => (
       }}
       w="100%"
       gap="0"
-      fontWeight="bold"
     >
       <GridItem pl="2" area={'nav'}>
         <Navbar />
       </GridItem>
       <Show above="lg">
-        <GridItem pl="2" bg="pink.300" area={'aside'}>
+        <GridItem pl="2" area={'aside'}>
           Aside
         </GridItem>
       </Show>
 
-      <GridItem pl="2" bg="green.300" area={'main'}>
+      <GridItem pl="2" area={'main'}>
         <Accordion>
           <AccordionItem>
             <h2>
