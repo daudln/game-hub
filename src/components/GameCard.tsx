@@ -21,7 +21,12 @@ const GameCard = ({ game }: Props) => {
     <Box>
       <Card>
         <Link href={game.background_image} target="_blank">
-          <Image src={getCroppedImageUrl(game.background_image)} />
+          <Image
+            objectFit={'cover'}
+            height="100%"
+            minH={250}
+            src={getCroppedImageUrl(game.background_image)}
+          />
         </Link>
         <CardBody>
           <Heading fontSize={'2xl'}>{game.name}</Heading>
