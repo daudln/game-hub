@@ -1,25 +1,41 @@
-import { HStack, Image, List, ListItem, Spinner, Text } from '@chakra-ui/react';
-import useGenres from '../hooks/useGenre';
+import { HStack, Image, List, ListItem, Button } from '@chakra-ui/react';
+import useGenres, { Genre } from '../hooks/useGenre';
 import getCroppedImageUrl from '../services/image-url';
+import GenreSkeleton from './GenreSkeleton';
 
-const GenresList = () => {
-  const { data: genres, isLoading } = useGenres();
+interface Props {
+  genres: Genre[];
+  onSelect: (genre: Genre) => void;
+  selectedGenre: Genre | null;
+}
+
+const GenresList = ({ genres, selectedGenre, onSelect }: Props) => {
+  const { isLoading, error } = useGenres();
+  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  if (error) return null;
   return (
     <>
-      {isLoading && <Spinner />}
+      {isLoading &&
+        skeletons.map((skeleton) => <GenreSkeleton key={skeleton} />)}
       <List>
         {genres.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
-            <HStack
-              _hover={{ textDecoration: 'underline' }}
-              style={{ cursor: 'pointer', overflowY: 'scroll' }}
-            >
+            <HStack>
               <Image
                 boxSize="32px"
                 src={getCroppedImageUrl(genre.image_background)}
                 borderRadius={8}
               />
-              <Text fontSize={18}>{genre.name}</Text>
+              <Button
+                variant={'link'}
+                fontSize={16}
+                fontWeight={selectedGenre?.id === genre.id ? 'bold' : 'normal'}
+                onClick={() => {
+                  onSelect(genre);
+                }}
+              >
+                {genre.name}
+              </Button>
             </HStack>
           </ListItem>
         ))}
