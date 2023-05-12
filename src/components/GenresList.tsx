@@ -5,8 +5,8 @@ import GenreSkeleton from './GenreSkeleton';
 
 interface Props {
   genres: Genre[];
-  onSelect: (genre: Genre) => void;
   selectedGenre: Genre | null;
+  onSelect: (genre: Genre) => void;
 }
 
 const GenresList = ({ genres, selectedGenre, onSelect }: Props) => {
