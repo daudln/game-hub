@@ -1,28 +1,14 @@
-import {
-  HStack,
-  Image,
-  List,
-  ListItem,
-  Text,
-  textDecoration,
-} from '@chakra-ui/react';
-import useData from '../hooks/useData';
-import { Genre } from '../hooks/useGenre';
+import { HStack, Image, List, ListItem, Spinner, Text } from '@chakra-ui/react';
+import useGenres from '../hooks/useGenre';
 import getCroppedImageUrl from '../services/image-url';
 
 const GenresList = () => {
-  const { data, isLoading } = useData<Genre>('/genres');
+  const { data: genres, isLoading } = useGenres();
   return (
     <>
-      {isLoading && (
-        <div className="d-flex justify-content-center">
-          <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>
-      )}
+      {isLoading && <Spinner />}
       <List>
-        {data.map((genre) => (
+        {genres.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack
               _hover={{ textDecoration: 'underline' }}

@@ -1,4 +1,12 @@
-import { Card, CardBody, Heading, HStack, Image, Link } from '@chakra-ui/react';
+import {
+  Box,
+  Card,
+  CardBody,
+  Heading,
+  HStack,
+  Image,
+  Link,
+} from '@chakra-ui/react';
 import { Game } from '../hooks/useGames';
 import CredicScore from './CredicScore';
 import PlatformIconList from './PlatformIcons';
@@ -10,8 +18,8 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <div>
-      <Card borderRadius={10} overflow="hidden" width={'300px'}>
+    <Box>
+      <Card>
         <Link href={game.background_image} target="_blank">
           <Image src={getCroppedImageUrl(game.background_image)} />
         </Link>
@@ -25,7 +33,7 @@ const GameCard = ({ game }: Props) => {
           </HStack>
         </CardBody>
       </Card>
-    </div>
+    </Box>
   );
 };
 
