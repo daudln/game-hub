@@ -2,10 +2,19 @@ import { extendTheme, ThemeConfig } from '@chakra-ui/react';
 
 const config: ThemeConfig = {
   initialColorMode: 'dark',
+  disableTransitionOnChange: false,
 };
 
 const theme = extendTheme({
   config,
+  styles: {
+    global: {
+      body: {
+        transitionProperty: 'all',
+        transitionDuration: 'normal',
+      },
+    },
+  },
   colors: {
     gray: {
       50: '#f9f9f9',
