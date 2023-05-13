@@ -6,6 +6,7 @@ import {
   Heading,
   Image,
   Link,
+  HStack,
 } from '@chakra-ui/react';
 import { Game } from '../hooks/useGames';
 import CredicScore from './CredicScore';
@@ -29,13 +30,13 @@ const GameCard = ({ game }: Props) => {
           />
         </Link>
         <CardBody>
-          <Heading fontSize={'2xl'}>{game.name}</Heading>
-          <Flex display={'flex'} justifyContent={'space-between'}>
+          <Flex justifyContent={'space-between'} mb={3}>
             <PlatformIconList
               platforms={game.parent_platforms.map((p) => p.platform)}
             />
             <CredicScore score={game.metacritic} />
           </Flex>
+          <Heading fontSize={'2xl'}>{game.name}</Heading>
         </CardBody>
       </Card>
     </Box>
