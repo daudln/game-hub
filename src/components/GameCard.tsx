@@ -1,12 +1,4 @@
-import {
-  Box,
-  Card,
-  CardBody,
-  Flex,
-  Heading,
-  Image,
-  Link,
-} from '@chakra-ui/react';
+import { Box, Card, CardBody, Flex, Heading, Image } from '@chakra-ui/react';
 import { Game } from '../hooks/useGames';
 import CredicScore from './CredicScore';
 import PlatformIconList from './PlatformIcons';
@@ -21,14 +13,13 @@ const GameCard = ({ game }: Props) => {
   return (
     <Box>
       <Card>
-        <Link href={game.background_image} target="_blank">
-          <Image
-            objectFit={'cover'}
-            height="100%"
-            minH={250}
-            src={getCroppedImageUrl(game.background_image)}
-          />
-        </Link>
+        <Image
+          objectFit={'cover'}
+          height="100%"
+          minH={250}
+          src={getCroppedImageUrl(game.background_image)}
+        />
+
         <CardBody>
           <Flex justifyContent={'space-between'} mb={3}>
             <PlatformIconList
