@@ -39,7 +39,7 @@ Finally, start the development server:
 npm start
 ```
 
-The app should now be running at [http://localhost:3000](http://localhost:3000).
+The app should now be running at [http://localhost:5173](http://localhost:5173).
 
 ## Deployment
 
