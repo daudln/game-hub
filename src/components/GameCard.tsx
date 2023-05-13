@@ -2,8 +2,8 @@ import {
   Box,
   Card,
   CardBody,
+  Flex,
   Heading,
-  HStack,
   Image,
   Link,
 } from '@chakra-ui/react';
@@ -30,12 +30,12 @@ const GameCard = ({ game }: Props) => {
         </Link>
         <CardBody>
           <Heading fontSize={'2xl'}>{game.name}</Heading>
-          <HStack display={'flex'} justifyContent={'space-between'}>
+          <Flex display={'flex'} justifyContent={'space-between'}>
             <PlatformIconList
               platforms={game.parent_platforms.map((p) => p.platform)}
             />
             <CredicScore score={game.metacritic} />
-          </HStack>
+          </Flex>
         </CardBody>
       </Card>
     </Box>

@@ -15,7 +15,7 @@ const GameGrid = ({ gameQuery }: Props) => {
   return (
     <>
       {error && (
-        <Alert colorScheme="red" borderRadius={4}>
+        <Alert colorScheme="red" mt={5} borderRadius={4}>
           {error}
         </Alert>
       )}
