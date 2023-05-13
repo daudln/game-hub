@@ -1,6 +1,6 @@
 # Game Discovery App
 
-This is a game discovery app built with React and Chakra UI, using the [RAWG Video Games Database API](https://api.rawg.io) for game data.
+This is a game discovery app built with React and Chakra UI, using the [RAWG Video Games Database API](https://api.rawg.io/docs/) for game data.
 
 ## Features
 
@@ -31,7 +31,7 @@ Then, create a `.env.local` file in the root directory of your project and add y
 REACT_APP_RAWG_API_KEY=your-api-key-here
 ```
 
-You can obtain a free RAWG API key by signing up for an account on the [RAWG website](https://rawg.io).
+You can obtain a free RAWG API key by signing up for an account on the [RAWG website](https://rawg.io/apidocs).
 
 Finally, start the development server:
 
@@ -49,7 +49,7 @@ To deploy the app to Vercel, create an account and link it to your GitHub reposi
 
 - [React](https://reactjs.org/)
 - [Chakra UI](https://chakra-ui.com/)
-- [RAWG Video Games Database API](https://rawg.io/)
+- [RAWG Video Games Database API](https://rawg.io/apidocs)
 - [Axios](https://axios-http.com/)
 - [React Router](https://reactrouter.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
