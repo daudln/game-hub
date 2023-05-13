@@ -20,8 +20,8 @@ A live demo of the app is available at [https://game-hub-dln.vercel.app/](https:
 To run the app locally, clone this repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/your-app-name.git
-cd your-app-name
+git clone https://github.com/daudln/game-hub.git
+cd game-hub
 npm install
 ```
 
@@ -53,7 +53,6 @@ To deploy the app to Vercel, create an account and link it to your GitHub reposi
 - [Axios](https://axios-http.com/)
 - [React Router](https://reactrouter.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
-- [React Loading Skeleton](https://github.com/dvtng/react-loading-skeleton)
 
 ## Credits
 
