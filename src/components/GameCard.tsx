@@ -6,7 +6,6 @@ import {
   Heading,
   Image,
   Link,
-  HStack,
 } from '@chakra-ui/react';
 import { Game } from '../hooks/useGames';
 import CredicScore from './CredicScore';
