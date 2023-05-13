@@ -12,6 +12,7 @@ import { Game } from '../hooks/useGames';
 import CredicScore from './CredicScore';
 import PlatformIconList from './PlatformIcons';
 import getCroppedImageUrl from '../services/image-url';
+import Emoji from './Emoji';
 
 interface Props {
   game: Game;
@@ -36,7 +37,9 @@ const GameCard = ({ game }: Props) => {
             />
             <CredicScore score={game.metacritic} />
           </Flex>
-          <Heading fontSize={'2xl'}>{game.name}</Heading>
+          <Heading fontSize={'2xl'}>
+            {game.name} <Emoji rating={game.rating_top} />
+          </Heading>
         </CardBody>
       </Card>
     </Box>
