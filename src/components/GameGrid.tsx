@@ -29,34 +29,35 @@ const GameGrid = ({ gameQuery }: Props) => {
   const fetchedGamesCount =
     games?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
   return (
-    <InfiniteScroll
-      dataLength={fetchedGamesCount}
-      hasMore={!!hasNextPage}
-      next={() => fetchNextPage()}
-      loader={<Spinner size="xl" />}
-    >
-      <SimpleGrid
-        padding={'10px'}
-        columns={{ sm: 1, md: 3, lg: 3, '2xl': 4 }}
-        spacing={6}
+    <Box>
+      <InfiniteScroll
+        dataLength={fetchedGamesCount}
+        hasMore={!!hasNextPage}
+        next={() => fetchNextPage()}
+        loader={<Spinner mx="auto" size="xl" />}
+        style={{ maxHeight: '100%', overflow: 'auto' }}
       >
-        {isLoading &&
-          skeletons.map((skeleton) => (
-            <GameCardContainer key={skeleton}>
-              <GameCardSkeleton key={skeleton} />
-            </GameCardContainer>
-          ))}
-        {games?.pages?.map((games, index) => (
-          <React.Fragment key={index}>
-            {games.results.map((game) => (
-              <GameCardContainer key={game.id}>
-                <GameCard game={game} />
-              </GameCardContainer>
+        <Box style={{ padding: '10px' }}>
+          <SimpleGrid columns={{ sm: 1, md: 3, lg: 3, '2xl': 4 }} spacing={6}>
+            {isLoading &&
+              skeletons.map((skeleton) => (
+                <GameCardContainer key={skeleton}>
+                  <GameCardSkeleton key={skeleton} />
+                </GameCardContainer>
+              ))}
+            {games?.pages?.map((games, index) => (
+              <React.Fragment key={index}>
+                {games.results.map((game) => (
+                  <GameCardContainer key={game.id}>
+                    <GameCard game={game} />
+                  </GameCardContainer>
+                ))}
+              </React.Fragment>
             ))}
-          </React.Fragment>
-        ))}
-      </SimpleGrid>
-    </InfiniteScroll>
+          </SimpleGrid>
+        </Box>
+      </InfiniteScroll>
+    </Box>
   );
 };
 

@@ -5,8 +5,9 @@ import {
   ListItem,
   Button,
   Heading,
+  Box,
 } from '@chakra-ui/react';
-import useGenres, { Genre } from '../hooks/useGenre';
+import useGenres, { Genre } from '../hooks/useGenres';
 import getCroppedImageUrl from '../services/image-url';
 import GenreSkeleton from './GenreSkeleton';
 
@@ -23,7 +24,7 @@ const GenresList = ({ selectedGenreId, onSelect }: Props) => {
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
   if (error) return null;
   return (
-    <>
+    <Box overflow="scroll" maxH={'100vh'}>
       <Heading mb={3}>Genres</Heading>
       {isLoading &&
         skeletons.map((skeleton) => <GenreSkeleton key={skeleton} />)}
@@ -53,7 +54,7 @@ const GenresList = ({ selectedGenreId, onSelect }: Props) => {
           </ListItem>
         ))}
       </List>
-    </>
+    </Box>
   );
 };
 

@@ -10,12 +10,16 @@ export interface Platform {
 }
 
 const apiClient = new APIClient<Platform>('/parent_platforms/lists/platforms');
-const usePlatforms = () =>
-  useQuery({
+export default function usePlatforms() {
+  return useQuery({
     queryKey: ['platforms'],
     queryFn: apiClient.getAll,
-    staleTime: ms('24h'),
     initialData: platforms,
+    staleTime: ms('24h'),
   });
+}
 
-export default usePlatforms;
+export function useSelectedPlatform(platformId?: number) {
+  const { data: platform } = usePlatforms();
+  return platform?.results.find((platform) => platform.id === platformId);
+}
