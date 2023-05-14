@@ -1,7 +1,7 @@
-import thumbsUp from '../assets/thumbs-up.webp';
-import meh from '../assets/meh.webp';
-import bullEyes from '../assets/bull-eyes.webp';
 import { Image, ImageProps } from '@chakra-ui/react';
+import bullEyes from '../assets/bull-eyes.webp';
+import meh from '../assets/meh.webp';
+import thumbsUp from '../assets/thumbs-up.webp';
 
 const Emoji = ({ rating }: { rating: number }) => {
   const EmojiMap: { [key: number]: ImageProps } = {

@@ -1,7 +1,6 @@
 export default {
   count: 19,
   next: null,
-  // previous: null,
   results: [
     {
       id: 4,
