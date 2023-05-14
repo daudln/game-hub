@@ -1,6 +1,6 @@
 export default {
   count: 19,
-  // next: null,
+  next: null,
   // previous: null,
   results: [
     {
