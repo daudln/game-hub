@@ -11,7 +11,7 @@ import getCroppedImageUrl from '../services/image-url';
 import GenreSkeleton from './GenreSkeleton';
 
 interface Props {
-  selectedGenre: Genre | null;
+  selectedGenre?: Genre;
   onSelect: (genre: Genre) => void;
 }
 
