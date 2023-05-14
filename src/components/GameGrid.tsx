@@ -15,7 +15,7 @@ const GameGrid = ({ gameQuery }: Props) => {
   if (error)
     return (
       <Alert colorScheme="red" mt={5} borderRadius={4}>
-        {error}
+        {error.message}
       </Alert>
     );
   return (
@@ -30,7 +30,7 @@ const GameGrid = ({ gameQuery }: Props) => {
             <GameCardSkeleton key={skeleton} />
           </GameCardContainer>
         ))}
-      {games.map((game) => (
+      {games?.results.map((game) => (
         <GameCardContainer key={game.id}>
           <GameCard game={game} />
         </GameCardContainer>

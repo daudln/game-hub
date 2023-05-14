@@ -11,13 +11,12 @@ import getCroppedImageUrl from '../services/image-url';
 import GenreSkeleton from './GenreSkeleton';
 
 interface Props {
-  genres: Genre[];
   selectedGenre: Genre | null;
   onSelect: (genre: Genre) => void;
 }
 
-const GenresList = ({ genres, selectedGenre, onSelect }: Props) => {
-  const { isLoading, error } = useGenres();
+const GenresList = ({ selectedGenre, onSelect }: Props) => {
+  const { isLoading, error, data } = useGenres();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
   if (error) return null;
   return (
@@ -26,7 +25,7 @@ const GenresList = ({ genres, selectedGenre, onSelect }: Props) => {
       {isLoading &&
         skeletons.map((skeleton) => <GenreSkeleton key={skeleton} />)}
       <List>
-        {genres.map((genre) => (
+        {data?.results.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>
               <Image
