@@ -1,3 +1,19 @@
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-corner {
+    height: 10px;
+}
+
 form {
     width: 100%;
 }
