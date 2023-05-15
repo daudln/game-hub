@@ -10,6 +10,7 @@ export interface Platform {
 }
 
 const apiClient = new APIClient<Platform>('/parent_platforms/lists/platforms');
+
 export default function usePlatforms() {
   return useQuery({
     queryKey: ['platforms'],
