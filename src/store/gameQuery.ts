@@ -17,17 +17,20 @@ interface GameQueryStore {
 }
 
 const store = persist(
-  devtools<GameQueryStore>((set) => ({
-    gameQuery: {},
-    setGenreId: (genreId) =>
-      set((store) => ({ gameQuery: { ...store.gameQuery, genreId } })),
-    setSortOrder: (sortOrder) =>
-      set((store) => ({ gameQuery: { ...store.gameQuery, sortOrder } })),
-    setPlatformId: (platformId) =>
-      set((store) => ({ gameQuery: { ...store.gameQuery, platformId } })),
-    setSearchInput: (searchInput) =>
-      set(() => ({ gameQuery: { searchInput } })),
-  })),
+  devtools<GameQueryStore>(
+    (set) => ({
+      gameQuery: {},
+      setGenreId: (genreId) =>
+        set((store) => ({ gameQuery: { ...store.gameQuery, genreId } })),
+      setSortOrder: (sortOrder) =>
+        set((store) => ({ gameQuery: { ...store.gameQuery, sortOrder } })),
+      setPlatformId: (platformId) =>
+        set((store) => ({ gameQuery: { ...store.gameQuery, platformId } })),
+      setSearchInput: (searchInput) =>
+        set(() => ({ gameQuery: { searchInput } })),
+    }),
+    { enabled: true }
+  ),
   { name: 'user-query-options' }
 );
 const useGameQueryStore = create(store);
