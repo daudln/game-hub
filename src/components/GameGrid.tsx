@@ -30,7 +30,7 @@ const GameGrid = () => {
     }
   };
   return (
-    <Box style={{ padding: '10px' }}>
+    <Box style={{ padding: '10px' }} pos="relative">
       <SimpleGrid columns={{ sm: 1, md: 3, lg: 3, '2xl': 4 }} spacing={6}>
         {isLoading &&
           skeletons.map((skeleton) => (
@@ -48,7 +48,14 @@ const GameGrid = () => {
           </React.Fragment>
         ))}
       </SimpleGrid>
-      <Button onClick={loadMoreData} mt={2} isDisabled={isFetchingNextPage}>
+      <Button
+        mx="auto"
+        mt={4}
+        display="block"
+        justifyContent="center"
+        onClick={loadMoreData}
+        isDisabled={isFetchingNextPage}
+      >
         {isFetchingNextPage ? <Spinner /> : 'Load more'}
       </Button>
     </Box>
