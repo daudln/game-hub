@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { devtools } from 'zustand/middleware';
 
 export interface GameQuery {
   genreId?: number;
@@ -15,7 +16,7 @@ interface GameQueryStore {
   setSearchInput: (searchInput: string) => void;
 }
 
-const useGameQueryStore = create<GameQueryStore>((set) => ({
+const store = devtools<GameQueryStore>((set) => ({
   gameQuery: {},
   setGenreId: (genreId) =>
     set((store) => ({ gameQuery: { ...store.gameQuery, genreId } })),
@@ -25,5 +26,6 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
     set((store) => ({ gameQuery: { ...store.gameQuery, platformId } })),
   setSearchInput: (searchInput) => set(() => ({ gameQuery: { searchInput } })),
 }));
+const useGameQueryStore = create(store);
 
 export default useGameQueryStore;

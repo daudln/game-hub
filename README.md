@@ -27,7 +27,7 @@ npm install
 
 Then, create a `.env.local` file in the root directory of your project and add your RAWG API key:
 
-```
+```md
 REACT_APP_RAWG_API_KEY=your-api-key-here
 ```
 
