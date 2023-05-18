@@ -55,6 +55,7 @@ const GameGrid = () => {
         justifyContent="center"
         onClick={loadMoreData}
         isDisabled={isFetchingNextPage}
+        width={200}
       >
         {isFetchingNextPage ? <Spinner /> : 'Load more'}
       </Button>
