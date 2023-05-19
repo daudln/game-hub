@@ -38,7 +38,9 @@ const GenresList = () => {
                 fontSize={18}
                 whiteSpace="normal"
                 textAlign={'left'}
-                fontWeight={selectedGenreId === genre.id ? 'bold' : 'normal'}
+                fontWeight={
+                  selectedGenreId === genre.id ? 'extrabold' : 'normal'
+                }
                 onClick={() => {
                   setGenreId(genre.id);
                 }}
