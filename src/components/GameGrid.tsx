@@ -56,7 +56,7 @@ const GameGrid = () => {
         onClick={loadMoreData}
         isDisabled={isFetchingNextPage || isLoading}
         width={200}
-        hidden={isLoading}
+        hidden={isLoading || !hasNextPage}
       >
         {isFetchingNextPage ? <Spinner /> : 'Load more'}
       </Button>
