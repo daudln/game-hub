@@ -7,7 +7,7 @@ import SortSelector from '../components/SortSelector';
 
 const HomePage = () => {
   return (
-    <>
+    <Box>
       <Grid
         templateAreas={{
           base: `"main"`,
@@ -19,13 +19,13 @@ const HomePage = () => {
         }}
       >
         <Show above="lg">
-          <GridItem px="2" area={'aside'} paddingY={3}>
+          <GridItem area={'aside'}>
             <GenresList />
           </GridItem>
         </Show>
 
-        <GridItem px="2" area={'main'}>
-          <Box pl={2}>
+        <GridItem area={'main'} as="main" ml={2}>
+          <Box>
             <GameHeading />
             <Flex mb={3}>
               <Box mr={3}>
@@ -37,7 +37,7 @@ const HomePage = () => {
           <GameGrid />
         </GridItem>
       </Grid>
-    </>
+    </Box>
   );
 };
 

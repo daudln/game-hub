@@ -29,7 +29,7 @@ const GameCard = ({ game }: Props) => {
             <CredicScore score={game.metacritic} />
           </Flex>
           <Heading fontSize={'2xl'}>
-            <Link to="">{game.name}</Link>
+            <Link to={`/games/${game.slug}`}>{game.name}</Link>
             <Emoji rating={game.rating_top} />
           </Heading>
         </CardBody>

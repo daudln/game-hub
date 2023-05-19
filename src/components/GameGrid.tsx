@@ -30,7 +30,7 @@ const GameGrid = () => {
     }
   };
   return (
-    <Box style={{ padding: '10px' }} pos="relative">
+    <Box p="10px" pos="relative">
       <SimpleGrid columns={{ sm: 1, md: 3, lg: 3, '2xl': 4 }} spacing={6}>
         {isLoading &&
           skeletons.map((skeleton) => (

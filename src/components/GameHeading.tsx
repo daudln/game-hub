@@ -10,9 +10,11 @@ const GameHeading = () => {
   const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
   const selectedPlatform = useSelectedPlatform(platformId);
 
-  const heading = `${selectedGenre?.name || ''} ${selectedPlatform?.name || ''} Games`;
+  const heading = `${selectedGenre?.name || ''} ${
+    selectedPlatform?.name || ''
+  } Games`;
   return (
-    <Heading my={3} as="h1">
+    <Heading mb={3} mx={3} as="h1">
       {heading}
     </Heading>
   );

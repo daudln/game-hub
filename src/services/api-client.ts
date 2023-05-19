@@ -15,10 +15,16 @@ const axiosInstance = axios.create({
 
 class APIClient<T> {
   constructor(public endpoint: string) {}
-  getAll = (config: AxiosRequestConfig) => {
-    return axiosInstance
-      .get<APIResponse<T>>(this.endpoint, config)
-      .then((response) => response.data);
+  getAll = async (config: AxiosRequestConfig) => {
+    const response = await axiosInstance.get<APIResponse<T>>(
+      this.endpoint,
+      config
+    );
+    return response.data;
+  };
+  get = async (id: number | string) => {
+    const response = await axiosInstance.get<T>(`${this.endpoint}/${id}`);
+    return response.data;
   };
 }
 
