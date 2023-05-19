@@ -4,9 +4,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import App from './App';
 import './index.css';
 import theme from './theme';
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -20,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-        <App />
+        <RouterProvider router={router} />
       </ChakraProvider>
       <ReactQueryDevtools />
     </QueryClientProvider>

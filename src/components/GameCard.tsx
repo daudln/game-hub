@@ -1,4 +1,5 @@
 import { Box, Card, CardBody, Flex, Heading, Image } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import { Game } from '../hooks/useGames';
 import getCroppedImageUrl from '../services/image-url';
 import CredicScore from './CredicScore';
@@ -28,7 +29,8 @@ const GameCard = ({ game }: Props) => {
             <CredicScore score={game.metacritic} />
           </Flex>
           <Heading fontSize={'2xl'}>
-            {game.name} <Emoji rating={game.rating_top} />
+            <Link to="">{game.name}</Link>
+            <Emoji rating={game.rating_top} />
           </Heading>
         </CardBody>
       </Card>
