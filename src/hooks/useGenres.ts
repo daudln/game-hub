@@ -3,12 +3,8 @@ import genres from '../data/genres';
 
 import APIClient from '../services/api-client';
 import ms from '../util/ms';
+import { Genre } from '../entinties/Genre';
 
-export interface Genre {
-  id: number;
-  name: string;
-  image_background: string;
-}
 const apiClient = new APIClient<Genre>('/games');
 
 export default function useGenres() {

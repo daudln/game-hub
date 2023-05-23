@@ -1,6 +1,6 @@
 import { Box, Card, CardBody, Flex, Heading, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { Game } from '../hooks/useGames';
+import { Game } from '../entinties/Game';
 import getCroppedImageUrl from '../services/image-url';
 import CredicScore from './CredicScore';
 import Emoji from './Emoji';
