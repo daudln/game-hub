@@ -1,4 +1,5 @@
-import { SimpleGrid, Text } from '@chakra-ui/react';
+import { List, ListIcon, ListItem, SimpleGrid, Text } from '@chakra-ui/react';
+import { CheckCircleIcon, SettingsIcon } from '@chakra-ui/icons';
 import { Game } from '../entinties/Game';
 import CredicScore from './CredicScore';
 import DefitionItem from './DefitionItem';
@@ -19,14 +20,24 @@ const GameAttribute = ({ game }: Props) => {
         <CredicScore score={game.metacritic} />
       </DefitionItem>
       <DefitionItem term="Genres">
-        {game.genres?.map((genre) => (
-          <Text key={genre.id}>{genre.name}</Text>
-        ))}
+        <List>
+          {game.genres?.map((genre) => (
+            <ListItem key={genre.id}>
+              <ListIcon as={CheckCircleIcon} color="green.500" />
+              {genre.name}
+            </ListItem>
+          ))}
+        </List>
       </DefitionItem>
       <DefitionItem term="Publisher">
-        {game.publishers?.map((publisher) => (
-          <Text key={publisher.id}>{publisher.name}</Text>
-        ))}
+        <List>
+          {game.publishers?.map((publisher) => (
+            <ListItem key={publisher.id}>
+              <ListIcon as={SettingsIcon} color="green.500" />
+              {publisher.name}
+            </ListItem>
+          ))}
+        </List>
       </DefitionItem>
     </SimpleGrid>
   );

@@ -2,6 +2,8 @@ import { Box, Heading, Spinner } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
 import ExpendableText from '../components/ExpendableText';
 import GameAttribute from '../components/GameAttribute';
+import GameScreenshoots from '../components/GameScreenshoots';
+import GameTrailer from '../components/GameTrailer';
 import useGame from '../hooks/useGame';
 
 const GameDetail = () => {
@@ -17,11 +19,13 @@ const GameDetail = () => {
   if (error || !game) throw new Error();
 
   return (
-    <Box>
+    <>
       <Heading as="h3">{game.name}</Heading>
       <ExpendableText>{game.description_raw}</ExpendableText>
       <GameAttribute game={game} />
-    </Box>
+      <GameTrailer gameId={game.id} />
+      <GameScreenshoots gameId={ game.id} />
+    </>
   );
 };
 

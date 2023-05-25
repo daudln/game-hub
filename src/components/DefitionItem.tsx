@@ -8,7 +8,7 @@ interface Props {
 
 const DefitionItem = ({ term, children }: Props) => {
   return (
-    <Box>
+    <Box my={5}>
       <Heading as="dt" fontSize={'md'} color="gray.600">
         {term}
       </Heading>
