@@ -5,7 +5,7 @@ import {
   Menu,
   MenuButton,
   MenuItem,
-  MenuList,
+  MenuList
 } from '@chakra-ui/react';
 import usePlatforms, { useSelectedPlatform } from '../hooks/usePlatforms';
 import useGameQueryStore from '../store/gameQuery';

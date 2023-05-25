@@ -4,10 +4,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import './index.css';
-import theme from './theme';
 import { RouterProvider } from 'react-router-dom';
+import './index.css';
 import router from './router';
+import theme from './theme';
 
 const queryClient = new QueryClient({
   defaultOptions: {

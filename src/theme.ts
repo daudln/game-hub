@@ -1,6 +1,6 @@
 import { extendTheme, ThemeConfig } from '@chakra-ui/react';
-import '@fontsource/roboto';
 import '@fontsource/open-sans';
+import '@fontsource/roboto';
 
 const config: ThemeConfig = {
   initialColorMode: 'dark',
