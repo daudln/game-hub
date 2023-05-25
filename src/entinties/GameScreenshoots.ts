@@ -1,4 +1,4 @@
-export interface GameScreenshoots {
+export default interface GameScreenshoots {
   id: number;
   width: number;
   height: number;

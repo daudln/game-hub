@@ -1,6 +1,6 @@
 import { List, ListIcon, ListItem, SimpleGrid, Text } from '@chakra-ui/react';
 import { CheckCircleIcon, SettingsIcon } from '@chakra-ui/icons';
-import { Game } from '../entinties/Game';
+import Game  from '../entinties/Game';
 import CredicScore from './CredicScore';
 import DefitionItem from './DefitionItem';
 
